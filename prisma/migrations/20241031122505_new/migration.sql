@@ -1,0 +1,27 @@
+-- AlterTable
+ALTER TABLE `User` ADD COLUMN `focus` BOOLEAN NOT NULL DEFAULT false,
+    ADD COLUMN `hotel1` VARCHAR(191) NULL,
+    ADD COLUMN `hotel2` VARCHAR(191) NULL,
+    ADD COLUMN `hotel3` VARCHAR(191) NULL;
+
+-- CreateTable
+CREATE TABLE `Focus` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `loginid` VARCHAR(191) NOT NULL,
+    `time` DATETIME(3) NOT NULL,
+    `place` VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Hotel` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `day` INTEGER NOT NULL,
+    `room` INTEGER NOT NULL,
+    `member1` VARCHAR(191) NOT NULL,
+    `member2` VARCHAR(191) NOT NULL,
+    `member3` VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

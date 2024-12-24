@@ -1,0 +1,18 @@
+-- AlterTable
+ALTER TABLE `User` ADD COLUMN `ac` INTEGER NOT NULL DEFAULT 0,
+    ADD COLUMN `challenge` INTEGER NOT NULL DEFAULT 0;
+
+-- CreateTable
+CREATE TABLE `Quiz` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `content` VARCHAR(191) NOT NULL,
+    `answer` VARCHAR(191) NOT NULL,
+    `dummy1` VARCHAR(191) NOT NULL,
+    `dummy2` VARCHAR(191) NOT NULL,
+    `dummy3` VARCHAR(191) NOT NULL,
+    `comment` VARCHAR(191) NOT NULL,
+    `ac` INTEGER NOT NULL DEFAULT 0,
+    `challenge` INTEGER NOT NULL DEFAULT 0,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

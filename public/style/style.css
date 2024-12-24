@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.home{
+    padding-top: 30%;
+}
+
+.illusts{
+    padding-top:20%;
+}
+
+.Soviet{
+    width:100%;
+    font-size:50px;
+    text-align: center;
+    background-color: red;
+    color:yellow;
+}

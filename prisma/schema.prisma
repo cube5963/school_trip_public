@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             Int            @id @default(autoincrement())
+  loginId        String         @unique
+  name           String
+  username       String?        @unique
+  password       String?
+  group          Int?
+  focus          Boolean        @default(false)
+  admin          Boolean        @default(false)
+  hotel1         String
+  hotel2         String
+  hotel3         String
+  ac             Int           @default(0)
+  challenge      Int           @default(0)
+  score          Int           @default(0)
+}
+
+model Schedule {
+  id        Int      @id @default(autoincrement())
+  date      Int
+  start     DateTime
+  end       DateTime?
+  destinations  String?
+  group     Int
+  title     String
+  place     String
+  content   String
+  repletion String?
+}
+
+model Focus {
+  id        Int      @id @default(autoincrement())
+  loginId   String
+  time      DateTime @default(now())
+  place     String
+}
+
+model Hotel {
+  id        Int      @id @default(autoincrement())
+  day       Int
+  room      Int
+  people    Int
+  member1   String?
+  member2   String?
+  member3   String?
+}
+
+model Group {
+  id        Int      @id @default(autoincrement())
+  name      String
+  leader    String
+  member2   String?
+  member3   String?
+  member4   String?
+}
+
+model Log {
+  id       Int      @id @default(autoincrement())
+  loginId   String
+  time      DateTime @default(now())
+  method    String
+  path      String
+  useragent String
+  contenttype String
+}
+
+
+model Quiz {
+  id       Int      @id @default(autoincrement())
+  content  String
+  answer   String
+  dummy1   String
+  dummy2   String
+  dummy3   String
+  dummy4   String
+  comment  String
+}
